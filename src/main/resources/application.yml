@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-gateway
+
+  config:
+    import: optional:configserver:https://config-server-bph7.onrender.com
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      # Rutas manuales (puedes agregar más)
+      routes:
+        - id: cliente-service
+          uri: lb://cliente-service
+          predicates:
+            - Path=/cliente/**
+
+server:
+  port: 8080 # Render lo ignora, pero es necesario igual
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: https://eureka-server-4ipn.onrender.com/eureka
