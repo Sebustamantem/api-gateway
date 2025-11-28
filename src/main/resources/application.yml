@@ -12,15 +12,17 @@ spring:
           enabled: true
           lower-case-service-id: true
 
-      # Rutas manuales (puedes agregar más)
       routes:
-        - id: cliente-service
-          uri: lb://cliente-service
+        # ----------- AUTH SERVICE ------------
+        - id: auth-service
+          uri: lb://auth-service
           predicates:
-            - Path=/cliente/**
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
 
 server:
-  port: 8080 # Render lo ignora, pero es necesario igual
+  port: 8080
 
 eureka:
   client:
