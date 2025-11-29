@@ -2,31 +2,19 @@ spring:
   application:
     name: api-gateway
 
-  config:
-    import: optional:configserver:https://config-server-bph7.onrender.com
-
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-
       routes:
-        # ----------- AUTH SERVICE ------------
         - id: auth-service
-          uri: lb://auth-service
+          uri: https://auth-service-tnc0.onrender.com
           predicates:
             - Path=/auth/**
           filters:
             - StripPrefix=1
 
-server:
-  port: 8080
-
 eureka:
   client:
     register-with-eureka: true
-    fetch-registry: true
+    fetch-registry: false
     service-url:
       defaultZone: https://eureka-server-4ipn.onrender.com/eureka
