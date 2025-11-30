@@ -4,9 +4,12 @@ spring:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: false  
       routes:
         - id: auth-service
-          uri: https://auth-service-tnc0.onrender.com
+          uri: https://auth-service-tnc0.onrender.com  
           predicates:
             - Path=/auth/**
           filters:
@@ -14,10 +17,7 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: https://eureka-server-4ipn.onrender.com/eureka
+    enabled: false  
 
 server:
   port: 8080
