@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: https://auth-service-tnc0.onrender.com
+          uri: https://auth-service-o4aa.onrender.com
           predicates:
             - Path=/auth/**
           filters:
