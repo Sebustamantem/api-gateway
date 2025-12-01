@@ -25,13 +25,19 @@ dependencyManagement {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    // Gateway
     implementation("org.springframework.cloud:spring-cloud-starter-gateway")
 
-    // OBLIGATORIO para evitar errores de filtros y rutas
+    //OBLIGATORIO: para leer config-server
+    implementation("org.springframework.cloud:spring-cloud-starter-config")
+
+    // Webflux es requerido por Gateway
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+
+    // Actuator para debugging
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-    // Opcional, pero recomendado para health checks en microservicios
+    // Opcional
     implementation("org.springframework.cloud:spring-cloud-starter-loadbalancer")
 }
 
