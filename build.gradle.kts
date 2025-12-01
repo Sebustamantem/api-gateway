@@ -20,24 +20,17 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.4")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.3")
     }
 }
 
 dependencies {
-    // Gateway
     implementation("org.springframework.cloud:spring-cloud-starter-gateway")
-
-    //OBLIGATORIO: para leer config-server
     implementation("org.springframework.cloud:spring-cloud-starter-config")
 
-    // Webflux es requerido por Gateway
     implementation("org.springframework.boot:spring-boot-starter-webflux")
-
-    // Actuator para debugging
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-    // Opcional
     implementation("org.springframework.cloud:spring-cloud-starter-loadbalancer")
 }
 
