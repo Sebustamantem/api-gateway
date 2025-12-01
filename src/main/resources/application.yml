@@ -1,12 +1,6 @@
-server:
-  port: 8080
-
 spring:
   application:
     name: gateway-service
-
-  config:
-    import: "configserver:https://config-server-bph7.onrender.com"
 
   cloud:
     gateway:
@@ -22,7 +16,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"   # << NECESARIO para ver gateway/routes
+        include: "*"
   endpoint:
     gateway:
       enabled: true
+
+server:
+  port: 8080
