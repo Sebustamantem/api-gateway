@@ -8,12 +8,21 @@ spring:
   config:
     import: "configserver:https://config-server-bph7.onrender.com"
 
-cloud:
-  gateway:
-    routes:
-      - id: auth-service
-        uri: https://auth-service-o4aa.onrender.com
-        predicates:
-          - Path=/auth/**
-        filters:
-          - StripPrefix=1
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: https://auth-service-o4aa.onrender.com
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # << NECESARIO para ver gateway/routes
+  endpoint:
+    gateway:
+      enabled: true
