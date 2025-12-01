@@ -15,8 +15,7 @@ spring:
           uri: https://auth-service-o4aa.onrender.com
           predicates:
             - Path=/auth/**
-          filters:
-            - StripPrefix=1
+
 
 management:
   endpoints:
