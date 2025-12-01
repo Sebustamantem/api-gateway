@@ -4,5 +4,5 @@ spring:
 
   cloud:
     config:
-      uri: https://config-server-bph7.onrender.com
+      uri: https://config-server-bph7.onrender.com/
       fail-fast: true
