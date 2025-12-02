@@ -4,16 +4,25 @@ server:
 spring:
   application:
     name: gateway-service
+
   config:
     import: "optional:configserver:https://config-server-bph7.onrender.com"
 
   cloud:
     gateway:
       routes:
+
+      # AUTH SERVICE
       - id: auth-service
         uri: https://auth-service-o4aa.onrender.com
         predicates:
         - Path=/auth/**
+
+      # VEHICLE SERVICE
+      - id: vehicle-service
+        uri: https://vehicle-service-xxxxx.onrender.com
+        predicates:
+        - Path=/vehicles/**
 
 management:
   endpoints:
