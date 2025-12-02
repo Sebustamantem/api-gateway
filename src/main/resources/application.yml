@@ -20,7 +20,7 @@ spring:
 
       # VEHICLE SERVICE
       - id: vehicle-service
-        uri: https://vehicle-service-xxxxx.onrender.com
+        uri: https://vehicule-service.onrender.com
         predicates:
         - Path=/vehicles/**
 
