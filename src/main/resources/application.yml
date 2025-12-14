@@ -12,24 +12,37 @@ spring:
     gateway:
       routes:
 
-      # AUTH SERVICE
-      - id: auth-service
-        uri: https://auth-service-o4aa.onrender.com
-        predicates:
-        - Path=/auth/**
+        # =========================
+        # AUTH SERVICE
+        # =========================
+        - id: auth-service
+          uri: https://auth-service-o4aa.onrender.com
+          predicates:
+            - Path=/auth/**
 
-      # VEHICLE SERVICE
-      - id: vehicle-service
-        uri: https://vehicule-service.onrender.com
-        predicates:
-        - Path=/vehicles/**
+        # =========================
+        # VEHICLE SERVICE
+        # =========================
+        - id: vehicle-service
+          uri: https://vehicule-service.onrender.com
+          predicates:
+            - Path=/vehicles/**
 
+        # =========================
         # MAINTENANCE SERVICE
-      - id: maintenance-service
-        uri: https://maintenance-service-gn34.onrender.com
-        predicates:
-        - Path=/maintenances/**
+        # =========================
+        - id: maintenance-service
+          uri: https://maintenance-service-gn34.onrender.com
+          predicates:
+            - Path=/maintenances/**
 
+        # =========================
+        # EXPENSE SERVICE 
+        # =========================
+        - id: expense-service
+          uri: 
+          predicates:
+            - Path=/expenses/**
 
 management:
   endpoints:
