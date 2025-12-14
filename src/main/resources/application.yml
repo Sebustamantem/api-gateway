@@ -40,7 +40,7 @@ spring:
         # EXPENSE SERVICE 
         # =========================
         - id: expense-service
-          uri: 
+          uri: https://expense-service-owmj.onrender.com
           predicates:
             - Path=/expenses/**
 
