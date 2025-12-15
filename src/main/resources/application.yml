@@ -42,7 +42,7 @@ spring:
         - id: expense-service
           uri: https://expense-service-owmj.onrender.com
           predicates:
-            - Path=/expenses/**
+            - Path=/api/expenses/**
 
 management:
   endpoints:
